@@ -1,36 +1,65 @@
-# 🗄️ Employee Management System (MySQL - 60 Practical Tasks)
-
-A comprehensive hands-on implementation of **60 fundamental to intermediate SQL operations** covering Core Data Definition Language (DDL) and Data Manipulation Language (DML) statements.
 
 ---
 
-## 📌 Project Overview
+## task 1 details
 
-* **Database:** `company_db`
-* **Primary Entity:** `employees`
-* **Secondary Entity:** `departments` / `company_departments`
-* **Tooling:** MySQL Command Line Client / MySQL Workbench
-* **Scope:** Database creation, schema configuration, data insertion, logical conditional querying, transactional updates, deletions, and structural table modifications.
+### 📄 Internship_Program_MySql_DB.sql
 
----
+this file contains:
 
-## 🛠️ Key SQL Operations Covered
+- database creation queries
+- table creation queries
+- insert operations
+- select (dql) queries
+- update operations
+- delete operations
+- basic sql practice tasks
 
-| Category | Tasks | Commands Used |
-| :--- | :--- | :--- |
-| **Database Setup** | Tasks 1–5 | `CREATE DATABASE`, `USE`, `CREATE TABLE`, `DESCRIBE`, `SHOW TABLES` |
-| **Data Ingestion** | Tasks 6–11 | `INSERT INTO ... VALUES` |
-| **Data Retrieval & Filtering** | Tasks 12–30 | `SELECT`, `WHERE`, `AND`, `OR`, Comparisons (`>`, `<`, `>=`, `=`) |
-| **Data Updates** | Tasks 31–38 | `UPDATE ... SET ... WHERE`, Arithmetic calculations |
-| **Data Deletions** | Tasks 39–43 | `DELETE FROM ... WHERE` |
-| **Column Alterations** | Tasks 44–50 | `ALTER TABLE` (`ADD`, `MODIFY`, `CHANGE`, `DROP`) |
-| **Table Lifecycle & DDL** | Tasks 51–60 | `RENAME TABLE`, `TRUNCATE TABLE`, `DROP TABLE` |
+it is the **main sql file (task 1)** of this internship program.
 
 ---
 
-## 📁 Repository Structure
+## other tasks
 
-```text
-.
-├── Internship_Program_MySql_DB.sql   # Complete execution script with all 60 tasks
-└── README.md                         # Project documentation and summary
+### 📁 Task 2
+contains second sql practical assignment with separate solutions and documentation.
+
+### 📁 Task 3
+contains third sql practical assignment with structured sql queries and readme.
+
+---
+
+## topics covered
+
+- create database
+- create table
+- insert records
+- select queries
+- where clause
+- logical operators (and / or / not)
+- between / in / like
+- update and delete
+- basic sql practice structure
+
+---
+
+## purpose
+
+this project is created for:
+- sql internship training
+- practice of ddl / dml / dql
+- placement preparation
+- github portfolio building
+
+---
+
+## note
+
+- task 1 is the base file of entire project
+- run queries in mysql workbench step by step
+- maintain order while executing sql commands
+
+---
+
+## author
+internship sql training project
