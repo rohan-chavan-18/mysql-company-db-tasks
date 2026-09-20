@@ -1,65 +1,147 @@
+# 📘 Internship SQL Training Project
 
 ---
 
-## task 1 details
+## 📌 Project Overview
 
-### 📄 Internship_Program_MySql_DB.sql
+This project is part of an **SQL Internship Training Program** focused on mastering:
 
-this file contains:
+- Database design
+- SQL queries (DDL, DML, DQL)
+- Filtering and conditions
+- Data manipulation operations
+- Real-world SQL practice for placements
 
-- database creation queries
-- table creation queries
-- insert operations
-- select (dql) queries
-- update operations
-- delete operations
-- basic sql practice tasks
-
-it is the **main sql file (task 1)** of this internship program.
-
----
-
-## other tasks
-
-### 📁 Task 2
-contains second sql practical assignment with separate solutions and documentation.
-
-### 📁 Task 3
-contains third sql practical assignment with structured sql queries and readme.
+It is designed for:
+- Hands-on learning
+- Interview preparation
+- GitHub portfolio building
 
 ---
 
-## topics covered
+## 📁 Project Structure
+Internship_SQL_Project
 
-- create database
-- create table
-- insert records
-- select queries
-- where clause
-- logical operators (and / or / not)
-- between / in / like
-- update and delete
-- basic sql practice structure
+├── 📄 Internship_Program_MySql_DB.sql (Task 1 - Main File)
+├── 📁 Task 2
+│ ├── SQL solutions
+│ └── README.md
+├── 📁 Task 3
+│ ├── SQL solutions
+│ └── README.md
+├── 📁 Task 4
+│ ├── Kiran_Academy_Task4_Solutions.sql
+│ └── README.md
+└── 📄 README.md (Main Project Documentation)
 
----
-
-## purpose
-
-this project is created for:
-- sql internship training
-- practice of ddl / dml / dql
-- placement preparation
-- github portfolio building
 
 ---
 
-## note
+## 🧾 Task 1 Details
 
-- task 1 is the base file of entire project
-- run queries in mysql workbench step by step
-- maintain order while executing sql commands
+### 📄 File: `Internship_Program_MySql_DB.sql`
+
+This is the **main SQL file (Task 1)** of the internship program.
+
+It contains:
+
+- Database creation queries
+- Table creation queries
+- Insert operations
+- Select (DQL) queries
+- Update operations
+- Delete operations
+- Basic SQL practice tasks
 
 ---
 
-## author
-internship sql training project
+## 📁 Task 2 Details
+
+- Second SQL practical assignment
+- Structured SQL solutions
+- Includes separate README documentation
+
+---
+
+## 📁 Task 3 Details
+
+- Third SQL practical assignment
+- Advanced structured SQL queries
+- Includes documentation and explanations
+
+---
+
+## 📁 Task 4 Details
+
+### 📄 File: `Kiran_Academy_Task4_Solutions.sql`
+
+Task 4 is focused on **Employee Management System — WHERE Clause & Filtering Operators**
+
+### 📌 Key Features:
+
+- 60 SQL queries (basic to advanced level)
+- Complete use of WHERE clause filtering
+- Logical operators (AND, OR, NOT)
+- Range queries (BETWEEN)
+- Set operations (IN, NOT IN)
+- Pattern matching (LIKE)
+- NULL handling (IS NULL, IS NOT NULL)
+
+### 🧠 Topics Covered:
+
+- Basic filtering using `=`, `!=`, `<>`
+- Relational operators (`>`, `<`, `>=`, `<=`)
+- Logical conditions
+- Data filtering techniques
+- Real-world SQL query building
+
+---
+
+## 🧠 Topics Covered (Overall Project)
+
+- CREATE DATABASE
+- CREATE TABLE
+- INSERT INTO records
+- SELECT queries
+- WHERE clause
+- Logical operators (AND / OR / NOT)
+- BETWEEN / IN / LIKE
+- UPDATE statements
+- DELETE statements
+- SQL fundamentals practice
+
+---
+
+## 🎯 Purpose of Project
+
+This project is created for:
+
+- SQL internship training
+- Practice of DDL / DML / DQL operations
+- Placement preparation (TCS / Infosys / Capgemini level)
+- Building GitHub portfolio projects
+
+---
+
+## ⚠️ Important Notes
+
+- Task 1 is the **base file of the entire project**
+- Task 4 is the **most important filtering practice module**
+- Execute SQL queries step by step in MySQL Workbench
+- Maintain correct order while running scripts
+
+---
+
+## 👨‍💻 Author
+
+**Internship SQL Training Project**  
+Developed for learning and placement preparation purposes.
+
+---
+
+## ⭐ Outcome
+
+✔ Strong SQL fundamentals  
+✔ Hands-on database practice  
+✔ Real-world query writing experience  
+✔ GitHub-ready portfolio project  
