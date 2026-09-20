@@ -1,478 +1,191 @@
-Task 1:
-create Database company_db;
-Query OK, 1 row affected (0.03 sec)
-
-Task 2:
-use company_db;
-Database changed
-
-Task 3:
-create table employees(employee_id int primary key, employee_name varchar(100), department varchar(50), salary decimal(10, 2), city varchar(50), joining_date Date, status varchar(20));
-Query OK, 0 rows affected (0.07 sec)
-
-Task 4:
- Desc employees;
-+---------------+---------------+------+-----+---------+-------+
-| Field         | Type          | Null | Key | Default | Extra |
-+---------------+---------------+------+-----+---------+-------+
-| employee_id   | int           | NO   | PRI | NULL    |       |
-| employee_name | varchar(100)  | YES  |     | NULL    |       |
-| department    | varchar(50)   | YES  |     | NULL    |       |
-| salary        | decimal(10,2) | YES  |     | NULL    |       |
-| city          | varchar(50)   | YES  |     | NULL    |       |
-| joining_date  | date          | YES  |     | NULL    |       |
-| status        | varchar(20)   | YES  |     | NULL    |       |
-+---------------+---------------+------+-----+---------+-------+
-7 rows in set (0.01 sec)
-
-Task 5:
-Show tables;
-+----------------------+
-| Tables_in_company_db |
-+----------------------+
-| employees            |
-+----------------------+
-1 row in set (0.00 sec)
-
-Task 6:
-insert into employees values(101, "Rahul Patil", "Developement", 45000, "Pune", '2026-01-10', "Active");
-Query OK, 1 row affected (0.01 sec)
-
-Task 7:
-insert into employees values(102, "Priya Sharma", "Testing", 38000, "Mumbai", '2026-02-15', "Active");
-Query OK, 1 row affected (0.01 sec)
-
-Task 8:
-insert into employees values(103, "Amit Joshi", "Development", 52000, "Pune", '2025-12-05', "Active");
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 9:
-insert into employees values(104," Sneha Kulkarni", "HR", 35000, "Nashik", '2026-03-20'," Active");
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 10:
-insert into employees value(105, "Rohan Deshmukh", "Support", 30000," Mumbai",'2026-04-01', "Inactive" );
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 11:
-insert into employees value(106, "Anjali More", "Testing", 42000," Pune",'2026-05-12', "Active" );
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 12:
- select * from employees;
-+-------------+-----------------+--------------+----------+---------+--------------+----------+
-| employee_id | employee_name   | department   | salary   | city    | joining_date | status   |
-+-------------+-----------------+--------------+----------+---------+--------------+----------+
-|         101 | Rahul Patil     | Developement | 45000.00 | Pune    | 2026-01-10   | Active   |
-|         102 | Priya Sharma    | Testing      | 38000.00 | Mumbai  | 2026-02-15   | Active   |
-|         103 | Amit Joshi      | Development  | 52000.00 | Pune    | 2025-12-05   | Active   |
-|         104 |  Sneha Kulkarni | HR           | 35000.00 | Nashik  | 2026-03-20   |  Active  |
-|         105 | Rohan Deshmukh  | Support      | 30000.00 |  Mumbai | 2026-04-01   | Inactive |
-|         106 | Anjali More     | Testing      | 42000.00 |  Pune   | 2026-05-12   | Active   |
-+-------------+-----------------+--------------+----------+---------+--------------+----------+
-6 rows in set (0.00 sec)
-
-
-Task 13:
-select employee_name from employees;
-+-----------------+
-| employee_name   |
-+-----------------+
-| Rahul Patil     |
-| Priya Sharma    |
-| Amit Joshi      |
-|  Sneha Kulkarni |
-| Rohan Deshmukh  |
-| Anjali More     |
-+-----------------+
-6 rows in set (0.00 sec)
-
-
-Task 14:
-select employee_name,salary from employees;
-+-----------------+----------+
-| employee_name   | salary   |
-+-----------------+----------+
-| Rahul Patil     | 45000.00 |
-| Priya Sharma    | 38000.00 |
-| Amit Joshi      | 52000.00 |
-|  Sneha Kulkarni | 35000.00 |
-| Rohan Deshmukh  | 30000.00 |
-| Anjali More     | 42000.00 |
-+-----------------+----------+
-6 rows in set (0.00 sec)
-
-
-Task 15:
-select employee_name,department, city from employees;
-+-----------------+--------------+---------+
-| employee_name   | department   | city    |
-+-----------------+--------------+---------+
-| Rahul Patil     | Developement | Pune    |
-| Priya Sharma    | Testing      | Mumbai  |
-| Amit Joshi      | Development  | Pune    |
-|  Sneha Kulkarni | HR           | Nashik  |
-| Rohan Deshmukh  | Support      |  Mumbai |
-| Anjali More     | Testing      |  Pune   |
-+-----------------+--------------+---------+
-6 rows in set (0.00 sec)
-
-
-Task 16:
- select * from employees where city = "Pune";
-+-------------+---------------+--------------+----------+------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city | joining_date | status |
-+-------------+---------------+--------------+----------+------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune | 2026-01-10   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune | 2025-12-05   | Active |
-+-------------+---------------+--------------+----------+------+--------------+--------+
-2 rows in set (0.00 sec)
-
-
-Task 17:
- select * from employees where city = "Mumbai";
-+-------------+---------------+------------+----------+--------+--------------+--------+
-| employee_id | employee_name | department | salary   | city   | joining_date | status |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-|         102 | Priya Sharma  | Testing    | 38000.00 | Mumbai | 2026-02-15   | Active |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-1 row in set (0.00 sec)
-
-Task 18:
- select * from employees where department = "Development";
-+-------------+---------------+-------------+----------+------+--------------+--------+
-| employee_id | employee_name | department  | salary   | city | joining_date | status |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-|         103 | Amit Joshi    | Development | 52000.00 | Pune | 2025-12-05   | Active |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-1 row in set (0.00 sec)
-
-Task 19:
- select * from employees where department = "Testing";
-+-------------+---------------+------------+----------+--------+--------------+--------+
-| employee_id | employee_name | department | salary   | city   | joining_date | status |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-|         102 | Priya Sharma  | Testing    | 38000.00 | Mumbai | 2026-02-15   | Active |
-|         106 | Anjali More   | Testing    | 42000.00 |  Pune  | 2026-05-12   | Active |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-2 rows in set (0.00 sec)
-
-Task 20:
-select * from employees where status = "Active";
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city   | joining_date | status |
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune   | 2026-01-10   | Active |
-|         102 | Priya Sharma  | Testing      | 38000.00 | Mumbai | 2026-02-15   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune   | 2025-12-05   | Active |
-|         106 | Anjali More   | Testing      | 42000.00 |  Pune  | 2026-05-12   | Active |
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-4 rows in set (0.00 sec)
-
-Task 21:
- select * from employees where status = "Inactive";
-+-------------+----------------+------------+----------+---------+--------------+----------+
-| employee_id | employee_name  | department | salary   | city    | joining_date | status   |
-+-------------+----------------+------------+----------+---------+--------------+----------+
-|         105 | Rohan Deshmukh | Support    | 30000.00 |  Mumbai | 2026-04-01   | Inactive |
-+-------------+----------------+------------+----------+---------+--------------+----------+
-1 row in set (0.00 sec)
-
-
-Task 22:
-select * from employees where employee_id = 103;
-+-------------+---------------+-------------+----------+------+--------------+--------+
-| employee_id | employee_name | department  | salary   | city | joining_date | status |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-|         103 | Amit Joshi    | Development | 52000.00 | Pune | 2025-12-05   | Active |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-1 row in set (0.01 sec)
-
-Task 23:
- select * from employees where employee_name = "Priya Sharma";
-+-------------+---------------+------------+----------+--------+--------------+--------+
-| employee_id | employee_name | department | salary   | city   | joining_date | status |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-|         102 | Priya Sharma  | Testing    | 38000.00 | Mumbai | 2026-02-15   | Active |
-+-------------+---------------+------------+----------+--------+--------------+--------+
-1 row in set (0.00 sec)
-
-Task 24:
-select * from employees where salary > 40000;
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city  | joining_date | status |
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune  | 2026-01-10   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune  | 2025-12-05   | Active |
-|         106 | Anjali More   | Testing      | 42000.00 |  Pune | 2026-05-12   | Active |
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-3 rows in set (0.00 sec)
-
-Task 25:
-select * from employees where salary < 40000;
-+-------------+-----------------+------------+----------+---------+--------------+----------+
-| employee_id | employee_name   | department | salary   | city    | joining_date | status   |
-+-------------+-----------------+------------+----------+---------+--------------+----------+
-|         102 | Priya Sharma    | Testing    | 38000.00 | Mumbai  | 2026-02-15   | Active   |
-|         104 |  Sneha Kulkarni | HR         | 35000.00 | Nashik  | 2026-03-20   |  Active  |
-|         105 | Rohan Deshmukh  | Support    | 30000.00 |  Mumbai | 2026-04-01   | Inactive |
-+-------------+-----------------+------------+----------+---------+--------------+----------+
-3 rows in set (0.00 sec)
-
-
-Task 26:
-select * from employees where salary = 35000;
-+-------------+-----------------+------------+----------+--------+--------------+---------+
-| employee_id | employee_name   | department | salary   | city   | joining_date | status  |
-+-------------+-----------------+------------+----------+--------+--------------+---------+
-|         104 |  Sneha Kulkarni | HR         | 35000.00 | Nashik | 2026-03-20   |  Active |
-+-------------+-----------------+------------+----------+--------+--------------+---------+
-1 row in set (0.00 sec)
-
-
-Task 27:
-select * from employees where salary >= 42000;
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city  | joining_date | status |
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune  | 2026-01-10   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune  | 2025-12-05   | Active |
-|         106 | Anjali More   | Testing      | 42000.00 |  Pune | 2026-05-12   | Active |
-+-------------+---------------+--------------+----------+-------+--------------+--------+
-3 rows in set (0.00 sec)
-
-
-Task 28:
- select * from employees where city = "Pune" and status = "Active";
-+-------------+---------------+--------------+----------+------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city | joining_date | status |
-+-------------+---------------+--------------+----------+------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune | 2026-01-10   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune | 2025-12-05   | Active |
-+-------------+---------------+--------------+----------+------+--------------+--------+
-2 rows in set (0.00 sec)
-
-
-Task 29:
-select * from employees where department = "Development" and salary > 45000;
-+-------------+---------------+-------------+----------+------+--------------+--------+
-| employee_id | employee_name | department  | salary   | city | joining_date | status |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-|         103 | Amit Joshi    | Development | 52000.00 | Pune | 2025-12-05   | Active |
-+-------------+---------------+-------------+----------+------+--------------+--------+
-1 row in set (0.00 sec)
-
-
-Task 30:
- select * from employees where city = "Pune" or city = "Mumbai";
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-| employee_id | employee_name | department   | salary   | city   | joining_date | status |
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-|         101 | Rahul Patil   | Developement | 45000.00 | Pune   | 2026-01-10   | Active |
-|         102 | Priya Sharma  | Testing      | 38000.00 | Mumbai | 2026-02-15   | Active |
-|         103 | Amit Joshi    | Development  | 52000.00 | Pune   | 2025-12-05   | Active |
-+-------------+---------------+--------------+----------+--------+--------------+--------+
-3 rows in set (0.00 sec)
-
-Task 31:
- update employees
-    -> set salary = 48000
-    -> where employee_name = "Rahul Patil";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 32:
- update employees
-    -> set status = "Active"
-    -> where employee_name = "Rohan Deshmukh";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 33:
- update employees
-    -> set city = "Pune"
-    -> where employee_name = "Sneha Kulkarni";
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
-
-Task 34:
- update employees
-    -> set department = "Development"
-    -> where employee_name = "Priya Sharma";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-
-Task 35:
- update employees
-    -> set salary = 45000
-    -> where employee_id = 106;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 36:
-update employees
-    -> set salary = salary + 3000
-    -> where employee_id = 103;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 37:
-update employees
-    -> set salary = salary + 2000
-    -> where department = "Testing";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 38:
-mysql> update employees
-    -> set city = "Mumbai Branch"
-    -> where city = "Mumbai";
-Query OK, 1 row affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Task 39:
-delete from employees
-    -> where employee_id = 105;
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 40:
- delete from employees
-    -> where employee_name = "Rohan Deshmukh";
-Query OK, 0 rows affected (0.01 sec)
-
-
-Task 41:
-delete from employees
-    -> where status = "Inactive";
-Query OK, 0 rows affected (0.00 sec)
-
-Task 42:
- delete from employees
-    -> where salary < 30000;
-Query OK, 0 rows affected (0.00 sec)
-
-Task 43:
-delete from employees
-    -> where employee_id = 104;
-Query OK, 1 row affected (0.01 sec)
-
-Task 44:
- alter table employees add column email varchar(100);
-Query OK, 0 rows affected (0.05 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-Task 45:
-alter table employees add column mobile varchar(100);
-Query OK, 0 rows affected (0.02 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-
-Task 46:
-alter table employees
-    -> modify column city varchar(100);
-Query OK, 4 rows affected (0.07 sec)
-Records: 4  Duplicates: 0  Warnings: 0
-
-Task 47:
-alter table employees
-    -> change column employee_name name varchar(20);
-Query OK, 4 rows affected (0.05 sec)
-Records: 4  Duplicates: 0  Warnings: 0
-
-
-Task 48:
-alter table employees
-    -> drop column mobile;
-Query OK, 0 rows affected (0.03 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-Task 49:
-alter table employees
-    -> add column experience int;
-Query OK, 0 rows affected (0.02 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-Task 50:
-update employees
-    -> set experience  = 2
-    -> where employee_id = 101;
-Query OK, 1 row affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-
-Task 51:
-mysql> create table departments(department_id int primary key, department_name varchar(100), location varchar(100));
-Query OK, 0 rows affected (0.03 sec)
-
-Task 52:
- insert into departments values(101, "IT", "Pune"),
-    -> (102, "Marketing", "Mumbai"),
-    -> (103, "Finance", "Satara");
-Query OK, 3 rows affected (0.01 sec)
-Records: 3  Duplicates: 0  Warnings: 0
-
-Task 53:
-select * from departments;
-+---------------+-----------------+----------+
-| department_id | department_name | location |
-+---------------+-----------------+----------+
-|           101 | IT              | Pune     |
-|           102 | Marketing       | Mumbai   |
-|           103 | Finance         | Satara   |
-+---------------+-----------------+----------+
-3 rows in set (0.00 sec)
-
-
-Task 54:
-update departments
-    -> set location = "Satara"
-    -> where location = "Pune";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-
-Task 55:
-delete from departments where department_id = 102;
-Query OK, 1 row affected (0.01 sec)
-
-
-Task 56:
-rename table departments to company_departments;
-Query OK, 0 rows affected (0.02 sec)
-
-
-Task 57:
-desc company_departments;
-+-----------------+--------------+------+-----+---------+-------+
-| Field           | Type         | Null | Key | Default | Extra |
-+-----------------+--------------+------+-----+---------+-------+
-| department_id   | int          | NO   | PRI | NULL    |       |
-| department_name | varchar(100) | YES  |     | NULL    |       |
-| location        | varchar(100) | YES  |     | NULL    |       |
-+-----------------+--------------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
-
-Task 58:
- truncate table company_departments;
-Query OK, 0 rows affected (0.03 sec)
-
-
-Task 59:
- drop table company_departments;
-Query OK, 0 rows affected (0.03 sec)
-
-
-Task 60:
-show tables;
-+----------------------+
-| Tables_in_company_db |
-+----------------------+
-| employees            |
-+----------------------+
-1 row in set (0.00 sec)
+-- Task 1: Create a database named company_db.
+CREATE DATABASE company_db;
+
+-- Task 2: Use/select the company_db database.
+USE company_db;
+
+-- Task 3: Create a table named employees with columns: employee_id (INT PRIMARY KEY), employee_name (VARCHAR(100)), department (VARCHAR(50)), salary (DECIMAL(10,2)), city (VARCHAR(50)), joining_date (DATE), and status (VARCHAR(20)).
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100),
+    department VARCHAR(50),
+    salary DECIMAL(10,2),
+    city VARCHAR(50),
+    joining_date DATE,
+    status VARCHAR(20)
+);
+
+-- Task 4: Display the structure of the employees table.
+DESC employees;
+
+-- Task 5: Display all tables available inside company_db.
+SHOW TABLES;
+
+-- Task 6: Insert record: 101, Rahul Patil, Development, 45000, Pune, 2026-01-10, Active.
+INSERT INTO employees VALUES (101, 'Rahul Patil', 'Development', 45000, 'Pune', '2026-01-10', 'Active');
+
+-- Task 7: Insert record: 102, Priya Sharma, Testing, 38000, Mumbai, 2026-02-15, Active.
+INSERT INTO employees VALUES (102, 'Priya Sharma', 'Testing', 38000, 'Mumbai', '2026-02-15', 'Active');
+
+-- Task 8: Insert record: 103, Amit Joshi, Development, 52000, Pune, 2025-12-05, Active.
+INSERT INTO employees VALUES (103, 'Amit Joshi', 'Development', 52000, 'Pune', '2025-12-05', 'Active');
+
+-- Task 9: Insert record: 104, Sneha Kulkarni, HR, 35000, Nashik, 2026-03-20, Active.
+INSERT INTO employees VALUES (104, 'Sneha Kulkarni', 'HR', 35000, 'Nashik', '2026-03-20', 'Active');
+
+-- Task 10: Insert record: 105, Rohan Deshmukh, Support, 30000, Mumbai, 2026-04-01, Inactive.
+INSERT INTO employees VALUES (105, 'Rohan Deshmukh', 'Support', 30000, 'Mumbai', '2026-04-01', 'Inactive');
+
+-- Task 11: Insert record: 106, Anjali More, Testing, 42000, Pune, 2026-05-12, Active.
+INSERT INTO employees VALUES (106, 'Anjali More', 'Testing', 42000, 'Pune', '2026-05-12', 'Active');
+
+-- Task 12: Display all records from employees.
+SELECT * FROM employees;
+
+-- Task 13: Display only employee_name.
+SELECT employee_name FROM employees;
+
+-- Task 14: Display employee_name and salary.
+SELECT employee_name, salary FROM employees;
+
+-- Task 15: Display employee_name, department, and city.
+SELECT employee_name, department, city FROM employees;
+
+-- Task 16: Display employees from Pune.
+SELECT * FROM employees WHERE city = 'Pune';
+
+-- Task 17: Display employees from Mumbai.
+SELECT * FROM employees WHERE city = 'Mumbai';
+
+-- Task 18: Display Development department employees.
+SELECT * FROM employees WHERE department = 'Development';
+
+-- Task 19: Display Testing department employees.
+SELECT * FROM employees WHERE department = 'Testing';
+
+-- Task 20: Display only Active employees.
+SELECT * FROM employees WHERE status = 'Active';
+
+-- Task 21: Display only Inactive employees.
+SELECT * FROM employees WHERE status = 'Inactive';
+
+-- Task 22: Display the employee whose employee_id = 103.
+SELECT * FROM employees WHERE employee_id = 103;
+
+-- Task 23: Display the record of the employee named 'Priya Sharma'.
+SELECT * FROM employees WHERE employee_name = 'Priya Sharma';
+
+-- Task 24: Display employees whose salary is greater than 40000.
+SELECT * FROM employees WHERE salary > 40000;
+
+-- Task 25: Display employees whose salary is less than 40000.
+SELECT * FROM employees WHERE salary < 40000;
+
+-- Task 26: Display employees whose salary is equal to 35000.
+SELECT * FROM employees WHERE salary = 35000;
+
+-- Task 27: Display employees whose salary is greater than or equal to 42000.
+SELECT * FROM employees WHERE salary >= 42000;
+
+-- Task 28: Display Pune employees whose status is Active.
+SELECT * FROM employees WHERE city = 'Pune' AND status = 'Active';
+
+-- Task 29: Display Development employees whose salary is greater than 45000.
+SELECT * FROM employees WHERE department = 'Development' AND salary > 45000;
+
+-- Task 30: Display employees from Pune or Mumbai.
+SELECT * FROM employees WHERE city = 'Pune' OR city = 'Mumbai';
+
+-- Task 31: Update Rahul Patil's salary from 45000 to 48000.
+UPDATE employees SET salary = 48000 WHERE employee_name = 'Rahul Patil';
+
+-- Task 32: Update Rohan Deshmukh's status from Inactive to Active.
+UPDATE employees SET status = 'Active' WHERE employee_name = 'Rohan Deshmukh';
+
+-- Task 33: Update Sneha Kulkarni's city from Nashik to Pune.
+UPDATE employees SET city = 'Pune' WHERE employee_name = 'Sneha Kulkarni';
+
+-- Task 34: Update Priya Sharma's department from Testing to Development.
+UPDATE employees SET department = 'Development' WHERE employee_name = 'Priya Sharma';
+
+-- Task 35: Update employee 106 salary to 45000.
+UPDATE employees SET salary = 45000 WHERE employee_id = 106;
+
+-- Task 36: Increase salary of employee 103 by 3000.
+UPDATE employees SET salary = salary + 3000 WHERE employee_id = 103;
+
+-- Task 37: Increase salary of all Testing employees by 2000.
+UPDATE employees SET salary = salary + 2000 WHERE department = 'Testing';
+
+-- Task 38: Change all employees from Mumbai to Mumbai Branch in the city column.
+UPDATE employees SET city = 'Mumbai Branch' WHERE city = 'Mumbai';
+
+-- Task 39: Delete the employee with employee_id = 105.
+DELETE FROM employees WHERE employee_id = 105;
+
+-- Task 40: Delete the employee named Rohan Deshmukh.
+DELETE FROM employees WHERE employee_name = 'Rohan Deshmukh';
+
+-- Task 41: Delete all employees whose status is Inactive.
+DELETE FROM employees WHERE status = 'Inactive';
+
+-- Task 42: Delete employees whose salary is less than 30000.
+DELETE FROM employees WHERE salary < 30000;
+
+-- Task 43: Delete the employee with employee_id = 104.
+DELETE FROM employees WHERE employee_id = 104;
+
+-- Task 44: Add a new column: email VARCHAR(100).
+ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+
+-- Task 45: Add a new column: mobile VARCHAR(15).
+ALTER TABLE employees ADD COLUMN mobile VARCHAR(15);
+
+-- Task 46: Change the size of city to VARCHAR(100).
+ALTER TABLE employees MODIFY city VARCHAR(100);
+
+-- Task 47: Rename column employee_name to name.
+ALTER TABLE employees CHANGE employee_name name VARCHAR(100);
+
+-- Task 48: Delete the mobile column.
+ALTER TABLE employees DROP COLUMN mobile;
+
+-- Task 49: Add a column: experience INT.
+ALTER TABLE employees ADD COLUMN experience INT;
+
+-- Task 50: Update experience for one employee.
+UPDATE employees SET experience = 2 WHERE employee_id = 101;
+
+-- Task 51: Create another table named departments (department_id INT PRIMARY KEY, department_name VARCHAR(100), location VARCHAR(100)).
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100),
+    location VARCHAR(100)
+);
+
+-- Task 52: Insert 3 department records.
+INSERT INTO departments VALUES (101, 'IT', 'Pune'), (102, 'Marketing', 'Mumbai'), (103, 'Finance', 'Satara');
+
+-- Task 53: Display all department records.
+SELECT * FROM departments;
+
+-- Task 54: Update one department location.
+UPDATE departments SET location = 'Satara' WHERE location = 'Pune';
+
+-- Task 55: Delete one department record.
+DELETE FROM departments WHERE department_id = 102;
+
+-- Task 56: Rename departments table to company_departments.
+RENAME TABLE departments TO company_departments;
+
+-- Task 57: Display the structure of company_departments.
+DESC company_departments;
+
+-- Task 58: Remove all records from company_departments while keeping the table structure.
+TRUNCATE TABLE company_departments;
+
+-- Task 59: Delete the company_departments table completely.
+DROP TABLE company_departments;
+
+-- Task 60: Display all remaining tables in the database.
+SHOW TABLES;
